@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- FIX fx:controller to locate the class in the "controller" package: -->
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox fx:controller="controller.BookshelfController"
+      xmlns:fx="http://javafx.com/fxml" spacing="10" prefHeight="500" prefWidth="800">
+    <Separator/>
+    <HBox alignment="center">
+        <Label text="Your Bookshelf" textAlignment="CENTER" styleClass="label1"/>
+    </HBox>
+
+    <!-- insert a list view here with width 250 and height 150 -->
+
+
+    <HBox alignment="CENTER">
+        <TableView fx:id="tableView" prefHeight="400" prefWidth="750" items="${controller.bookshelf.books}">
+            <columns>
+                <!-- Column for each property -->
+                <TableColumn text="Index" prefWidth="50">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="index"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Book Name" prefWidth="250">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Author" prefWidth="150">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="author"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Page Read" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="read"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Add Time" prefWidth="200">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="addTime"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <!-- Add more columns for other properties -->
+
+            </columns>
+        </TableView>
+    </HBox>
+
+
+
+    <GridPane xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="80">
+        <HBox alignment="bottom_right"
+              GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <Button text="Delete" prefWidth="100" onAction="#delete"/>
+        </HBox>
+
+        <HBox alignment="bottom_right"
+              GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button text="Add" prefWidth="100" onAction="#add"/>
+        </HBox>
+
+        <HBox alignment="bottom_right"
+              GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Button text="Enter" prefWidth="100" onAction="#enter"/>
+        </HBox>
+
+        <HBox alignment="bottom_right"
+              GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button text="Exit" prefWidth="100" onAction="#exit"/>
+        </HBox>
+    </GridPane>
+<!--    <HBox>-->
+<!--        <Label text="Cash Register: "/>-->
+<!--        <Text fx:id="cashTxt"/>-->
+<!--    </HBox>-->
+
+    <stylesheets><URL value="@style.css"/></stylesheets>
+
+</VBox>

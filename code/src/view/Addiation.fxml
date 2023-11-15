@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controller.AddController">
+
+    <VBox spacing="10" prefWidth="400" prefHeight="280">
+
+        <GridPane alignment="CENTER" vgap="5">
+
+            <!-- Add a new book label -->
+            <Label text="Add a new book!" styleClass="label1"/>
+
+            <!-- VBox for book details -->
+            <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="3"
+                  prefHeight="200" >
+
+                <!-- Book name -->
+                <Label text="Book name:" styleClass="label2"/>
+                <TextField fx:id="textField1"/>
+
+                <!-- Author -->
+                <Label text="Author:" styleClass="label2"/>
+                <TextField fx:id="textField2"/>
+
+                <!-- Notation -->
+                <Label text="Notation!" styleClass="errorLabel"/>
+                <Label text="You should put your txt file in the" />
+                <Label text=" root of this jar package."/>
+
+                <Button text="Add" onAction="#addBook"/>
+            </VBox>
+
+        </GridPane>
+
+        <!-- Stylesheet link -->
+        <stylesheets>
+            <URL value="@style.css"/>
+        </stylesheets>
+
+    </VBox>
+
+</StackPane>

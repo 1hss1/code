@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.BookController"
+      spacing="10" prefWidth="600" prefHeight="400">
+
+    <TextArea fx:id="novelTextArea" prefHeight="350" editable="false"/>
+
+    <HBox spacing="10" alignment="CENTER">
+
+        <Button text="Previous page" onAction="#nextPage"/>
+
+        <Button text="Next page" onAction="#previousPage"/>
+
+        <Button text="Exit" onAction="#exit"/>
+
+    </HBox>
+
+    <!-- Stylesheet link -->
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+
+</VBox>
